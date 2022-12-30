@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "🌱 Seeding..."
+
+DogWalker.create(name: "Mike Jones", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1532469060546-4eb37b460481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
+DogWalker.create(name: "Sally Sommer", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1576511934945-2859ac59d8bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2673&q=80")
+DogWalker.create(name: "Dolly King", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1579119134757-5c38803f34fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Kim Pike", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1557495235-340eb888a9fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2226&q=80")
+DogWalker.create(name: "Simone Johnson", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1542583479-28899e4763ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
+DogWalker.create(name: "Jen Dunes", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1595314544137-1b106b06e2c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Hudson Hines", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1548858806-e064cf9872c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
+DogWalker.create(name: "May West", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/flagged/photo-1579195107754-c8fe9ee2ddfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Jim Dinger", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1602900017944-678041f27dbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
+DogWalker.create(name: "Mike Day", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1548423469-3dcc5c4ccd65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Carol Freed", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1587143185708-674ef4a1c09b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Frank Under", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1536780250812-9c417ccad37d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Kerry Times", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1553322378-eb94e5966b0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+DogWalker.create(name: "Sarah Land", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1519705733052-abc8faae00f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80")
+DogWalker.create(name: "Jack Smith", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1627287761833-ef904223aebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80")
+DogWalker.create(name: "Valerie Lash", phone: Faker::PhoneNumber.cell_phone, favorite_dog_breed: Faker::Creature::Dog.breed, image_url: "https://images.unsplash.com/photo-1527362950785-f487a7c1fe48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80")
+
+puts "✅ Done seeding!" 
