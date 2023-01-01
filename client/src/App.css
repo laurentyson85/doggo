@@ -1,8 +1,13 @@
 .App {
-  text-align: center;
+  text-align: center;  
 }
 
-.App-logo {
+body {
+  background-image: url("doggoBackground.webp");
+  background-color: #cccccc;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +40,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
