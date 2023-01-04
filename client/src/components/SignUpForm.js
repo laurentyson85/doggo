@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 
 function SignUpForm({ onLogin }) {
-    const [signupData, setSignupData] = useState({
-        username: "",
-        password: "",
-        passwordConfirmation: "",
-    }) 
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(false); //eh, may not use this
-
-    function handleForm(event){
-        setSignupData({
-          ...signupData, [event.target.name]:event.target.value
-        })
-      }
+    
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -26,9 +19,9 @@ function SignUpForm({ onLogin }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            "username": signupData.username,
-            "password": signupData.password,
-            "password_confirmation": signupData.passwordConfirmation,
+            username,
+            password,
+            password_confirmation: passwordConfirmation,
           }),
         }).then((response) => {
           setLoading(false);
@@ -43,18 +36,19 @@ function SignUpForm({ onLogin }) {
 
       return (
         <div className="signupForm">
+        <div className="text">Sign Up Form</div>  
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="field">
               Username
-              <input type="text" id="username" autoComplete="off" value={signupData.username} onChange={handleForm}/>
+              <input type="text" id="username" autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
           </label>
-          <label>
+          <label className="field">
               Password
-              <input type="password" id="password" autoComplete="current-password" value={signupData.password} onChange={handleForm} />
+              <input type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>
-          <label>
+          <label className="field">
               Confirm Password
-              <input type="password" id="password_confirmation" autoComplete="current-password" value={signupData.passwordConfirmation} onChange={handleForm} />
+              <input type="password" id="password_confirmation" autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
           </label>        
           <button type="submit">Submit</button>
           {/* {loading ? "Loading..." : "Sign Up"} */}

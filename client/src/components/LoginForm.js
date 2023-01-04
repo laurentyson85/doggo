@@ -1,19 +1,11 @@
 import React, { useState } from "react";
 
 function LoginForm({ onLogin }) {
-    const [loginData, setLoginData] = useState({
-        username: "",
-        password: "",
-    }) 
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState(""); 
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(false); //eh, may not use this
-
-    function handleForm(event){
-        setLoginData({
-          ...loginData, [event.target.name]:event.target.value
-        })
-      }
-
+    
     function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
@@ -23,10 +15,7 @@ function LoginForm({ onLogin }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            "username": loginData.username,
-            "password": loginData.password,
-          }),
+          body: JSON.stringify({ username, password }),
         }).then((response) => {
           setLoading(false);
           if (response.ok) {
@@ -40,14 +29,15 @@ function LoginForm({ onLogin }) {
 
     return (
         <div className="loginForm">
+        <div className="text">Login Form</div>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="field">
               Username
-              <input type="text" id="username" autoComplete="off" value={loginData.username} onChange={handleForm}/>
+              <input type="text" id="username" autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
           </label>
-          <label>
+          <label className="field">
               Password
-              <input type="password" id="password" autoComplete="current-password" value={loginData.password} onChange={handleForm} />
+              <input type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>        
           <button type="submit">Submit</button>
           {/* {loading ? "Loading..." : "Login"} */}

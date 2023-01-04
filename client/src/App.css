@@ -18,12 +18,48 @@ body {
   font-size: 2em;
 }
 
-.content{
+/* .content{
   width: 330px; 
   border-radius: 10px;
-  padding: 40px 30px;
+  padding: 40px 50px;
   margin-top: 100px;
   box-shadow: -3px -3px 9px #aaa9a9a2,
               3px 3px 7px rgba(147, 149, 151, 0.671);
  
 }
+
+.text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: rgb(247, 233, 233);
+}
+
+.field{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.field input{
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  color: #e0d2d2;
+  border: 1px solid rgba(255, 255, 255, 0.438);
+  border-radius: 8px;
+  background: rgba(105, 105, 105, 0);
+}
+
+.field input::placeholder{
+  color: #e0d2d2a6;
+}
+
+.field:nth-child(2){
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
