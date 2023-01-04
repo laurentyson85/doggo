@@ -6,7 +6,7 @@ function LoginForm() {
         password: "",
     }) 
     const [errors, setErrors] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false); //eh, may not use this
 
     function handleForm(event){
         setLoginData({
@@ -17,7 +17,7 @@ function LoginForm() {
     function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        
+
         fetch("/login", {
           method: "POST",
           headers: {
@@ -32,10 +32,11 @@ function LoginForm() {
           if (response.ok) {
             response.json().then((user) => onLogin(user)); //onLogin needs to be passed as props from Home
           } else {
-            response.json().then((error) => setErrors(error.errors));
+            response.json().then((error) => setErrors(error.errors)); //I have notes about this in phase 4
           }
         });
       }
+      //might need to still set login data to "" after this post
 
     return (
         <div className="loginForm">
@@ -49,7 +50,7 @@ function LoginForm() {
               <input type="password" id="password" autoComplete="current-password" value={loginData.password} onChange={handleForm} />
           </label>        
           <button type="submit">Submit</button>
-          {/* {isLoading ? "Loading..." : "Login"} */}
+          {/* {loading ? "Loading..." : "Login"} */}
         </form>
         {/* {errors.map((err) => (
           <Error key={err}>{err}</Error>
