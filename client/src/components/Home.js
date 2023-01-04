@@ -6,7 +6,7 @@ function Home({ onLogin }) { //these props are being passed down from App
     const [toggleForm, setToggleForm] = useState(true);
 
     return(
-        <div>        
+        <div className="content">        
         {toggleForm ? (
             <>
               <LoginForm onLogin={onLogin} />              
