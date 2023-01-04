@@ -18,13 +18,16 @@ body {
   font-size: 2em;
 }
 
-/* .content{
-  width: 330px; 
+.content{
+  width: 330px;
+  font-size: larger;
+  margin: auto;
+  text-align: center; 
   border-radius: 10px;
-  padding: 40px 50px;
+  padding: 40px 60px;
   margin-top: 100px;
-  box-shadow: -3px -3px 9px #aaa9a9a2,
-              3px 3px 7px rgba(147, 149, 151, 0.671);
+  box-shadow: -10px -10px 9px #aaa9a9a2,
+              10px 10px 7px rgba(147, 149, 151, 0.671);
  
 }
 
@@ -40,6 +43,10 @@ body {
   width: 100%;
   display: flex;
   position: relative;
+}
+
+.field  p {
+  color: white;
 }
 
 .field input{
@@ -62,4 +69,4 @@ body {
 .field:nth-child(2){
   margin-top: 20px;
   margin-bottom: 20px;
-} */
+}

@@ -32,11 +32,11 @@ function LoginForm({ onLogin }) {
         <div className="text">Login Form</div>
         <form onSubmit={handleSubmit}>
           <label className="field">
-              Username
+              <p>Username</p>
               <input type="text" id="username" autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
           </label>
           <label className="field">
-              Password
+              <p>Password</p>
               <input type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>        
           <button type="submit">Submit</button>
