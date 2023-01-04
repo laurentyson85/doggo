@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SignUpForm() {
+function SignUpForm({ onLogin }) {
     const [signupData, setSignupData] = useState({
         username: "",
         password: "",

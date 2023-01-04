@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function LoginForm() {
+function LoginForm({ onLogin }) {
     const [loginData, setLoginData] = useState({
         username: "",
         password: "",
