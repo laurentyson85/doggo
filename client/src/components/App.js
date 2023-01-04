@@ -1,28 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
-import Header from "./Header";
-import '../App.css';
-import Home from "./Home";
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import Home from './Home';
+import "../App.css"
 
-function App() {
+function App(){
 
-
-
-
-
+    return (
+        <Header />
+    )
 
 
-
-
-
-
-
-
-  return (
-    <div>
-      <Header />
-    </div>
-  );
 }
 
 export default App;
