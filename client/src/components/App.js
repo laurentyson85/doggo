@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Home from './Home';
+import Nav from './Nav';
 import "../App.css"
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
       return (
         <div>
             <Header />
+            <Nav setUser={setUser} />
+
         </div>
         
       );
