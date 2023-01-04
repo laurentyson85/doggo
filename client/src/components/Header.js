@@ -1,5 +1,8 @@
 import React from "react";
-import doggoImage from "./doggoImage.png"
+import doggoImage from "../doggoImage.png"
+
+
+
 
 function Header() {
     return (
