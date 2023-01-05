@@ -4,14 +4,12 @@ function SignUpForm({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [errors, setErrors] = useState([]);
-    const [loading, setLoading] = useState(false); //eh, may not use this
+    const [errors, setErrors] = useState([]); 
     
 
     function handleSubmit(event) {
         event.preventDefault();
         setErrors([]);
-        setLoading(true);
 
         fetch("/signup", {
           method: "POST",
@@ -24,9 +22,8 @@ function SignUpForm({ onLogin }) {
             password_confirmation: passwordConfirmation,
           }),
         }).then((response) => {
-          setLoading(false);
           if (response.ok) {
-            response.json().then((user) => onLogin(user)); //onLogin needs to be passed as props from Home
+            response.json().then((user) => onLogin(user));
           } else {
             response.json().then((error) => setErrors(error.errors)); //I have notes about this in phase 4
           }
@@ -47,8 +44,7 @@ function SignUpForm({ onLogin }) {
           <label className="field">
               <input type="password" id="password_confirmation" placeholder="confirm password..." autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
           </label>        
-          <button className="submitButton" type="submit">Submit</button>
-          {/* {loading ? "Loading..." : "Sign Up"} */}
+          <button className="submitButton" type="submit">Submit</button>          
         </form>
         {/* {errors.map((err) => (
           <Error key={err}>{err}</Error>

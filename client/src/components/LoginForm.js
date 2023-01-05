@@ -4,11 +4,9 @@ function LoginForm({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState(""); 
     const [errors, setErrors] = useState([]);
-    const [loading, setLoading] = useState(false); //eh, may not use this
     
     function handleSubmit(event) {
         event.preventDefault();
-        setLoading(true);
 
         fetch("/login", {
           method: "POST",
@@ -17,9 +15,8 @@ function LoginForm({ onLogin }) {
           },
           body: JSON.stringify({ username, password }),
         }).then((response) => {
-          setLoading(false);
           if (response.ok) {
-            response.json().then((user) => onLogin(user)); //onLogin needs to be passed as props from Home
+            response.json().then((user) => onLogin(user));
           } else {
             response.json().then((error) => setErrors(error.errors)); //I have notes about this in phase 4
           }
@@ -38,7 +35,6 @@ function LoginForm({ onLogin }) {
               <input type="password" id="password" placeholder="password..."autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>        
           <button className="submitButton" type="submit">Submit</button>
-          {/* {loading ? "Loading..." : "Login"} */}
         </form>
         {/* {errors.map((err) => (
           <Error key={err}>{err}</Error>
