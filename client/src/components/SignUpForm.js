@@ -39,18 +39,15 @@ function SignUpForm({ onLogin }) {
         <div className="text">Sign Up Form</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">
-              <p>Username</p>
-              <input type="text" id="username" autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
+              <input type="text" id="username" placeholder="username..." autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
           </label>
           <label className="field">
-              <p>Password</p>
-              <input type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input type="password" id="password" placeholder="password..." autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>
           <label className="field">
-              <p>Confirm Password</p>
-              <input type="password" id="password_confirmation" autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
+              <input type="password" id="password_confirmation" placeholder="confirm password..." autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
           </label>        
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">Submit</button>
           {/* {loading ? "Loading..." : "Sign Up"} */}
         </form>
         {/* {errors.map((err) => (

@@ -31,15 +31,13 @@ function LoginForm({ onLogin }) {
         <div className="loginForm">
         <div className="text">Login Form</div>
         <form onSubmit={handleSubmit}>
-          <label className="field">
-              <p>Username</p>
-              <input type="text" id="username" autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
+          <label className="field">              
+              <input type="text" id="username" placeholder="username..." autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
           </label>
           <label className="field">
-              <p>Password</p>
-              <input type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input type="password" id="password" placeholder="password..."autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
           </label>        
-          <button type="submit">Submit</button>
+          <button className="submitButton" type="submit">Submit</button>
           {/* {loading ? "Loading..." : "Login"} */}
         </form>
         {/* {errors.map((err) => (
