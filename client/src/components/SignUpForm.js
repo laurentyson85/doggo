@@ -36,7 +36,7 @@ function SignUpForm({ onLogin }) {
 
       return (
         <div className="signupForm">
-        <div className="text">Sign Up Form</div>  
+        <div className="text">Sign Up for dogGo!</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">
               <input type="text" id="username" placeholder="username..." autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
