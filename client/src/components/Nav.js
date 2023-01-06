@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 
 function Nav ({ setUser }) {
+    const navigate = useNavigate()
 
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((response) => {
@@ -10,6 +12,7 @@ function Nav ({ setUser }) {
             setUser(null);
           }
         });
+        navigate("/")
       }
 
       let activeStyle = {
@@ -47,9 +50,10 @@ function Nav ({ setUser }) {
             >
                 Join as Dog Walker!
             </NavLink>
+            <button onClick={handleLogoutClick}>Logout</button>
             </nav>
         </div>
-        <button onClick={handleLogoutClick}>Logout</button>
+        
         </>
         
     )

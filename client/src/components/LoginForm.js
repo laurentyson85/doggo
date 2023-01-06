@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 function LoginForm({ onLogin }) {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState(""); 
     const [errors, setErrors] = useState([]);
@@ -21,6 +23,7 @@ function LoginForm({ onLogin }) {
             response.json().then((error) => setErrors(error.errors)); //I have notes about this in phase 4
           }
         });
+        navigate("/walkers")
       }
       //might need to still set login data to "" after this post
 
