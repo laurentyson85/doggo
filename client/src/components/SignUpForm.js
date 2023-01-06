@@ -50,10 +50,10 @@ function SignUpForm({ onLogin }) {
           </label>        
           <button className="submitButton" type="submit">Submit</button>          
         </form>
-        {/* {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))} */}
-        {/* for errors looks in notes there was a better way to display this */}
+        <br></br>
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
       </div>
     );
   }
