@@ -7,12 +7,14 @@ function SignUpForm({ onLogin }) {
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
 
     
 
     function handleSubmit(event) {
         event.preventDefault();
         setErrors([]);
+        setIsLoading(true)
 
         fetch("/signup", {
           method: "POST",
@@ -25,15 +27,16 @@ function SignUpForm({ onLogin }) {
             password_confirmation: passwordConfirmation,
           }),
         }).then((response) => {
+          setIsLoading(true);
           if (response.ok) {
             response.json().then((user) => onLogin(user));
           } else {
-            response.json().then((error) => setErrors(error.errors)); //I have notes about this in phase 4
+            response.json().then((error) => setErrors(error.errors));
           }
         });
         navigate("/walkers")
       }
-      //might need to still set signup data to "" after this post
+     
 
       return (
         <div className="signupForm">
@@ -48,7 +51,7 @@ function SignUpForm({ onLogin }) {
           <label className="field">
               <input type="password" id="password_confirmation" placeholder="confirm password..." autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
           </label>        
-          <button className="submitButton" type="submit">Submit</button>          
+          <button className="submitButton" type="submit">{isLoading ? "Loading..." : "Submit"}</button>          
         </form>
         <br></br>
         {errors.map((error) => (
