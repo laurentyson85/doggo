@@ -90,8 +90,21 @@ body {
   margin-top: 40px;
   outline: none;
   cursor: pointer;
+}
+
+.logoutButton{
+  margin: 25px 0 0 0;
+  width: 10%;
+  height: 50px;
+  color: rgb(238, 226, 226);
+  backdrop-filter: blur(10px);
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.438);
   border-radius: 8px;
- 
+  background: rgba(105, 105, 105, 0);  
+  outline: none;
+  cursor: pointer;
 }
 
 button:hover {
@@ -112,16 +125,11 @@ nav a {
   margin: 4rem;
   text-decoration: none;
   font-size: 1.4em;
-  color: rgb(238, 226, 226);
-  border-bottom: 2px solid #000;
+  color: white;
   transition: 0.1s;
   
 }
 
-nav a:hover {  
-  border-bottom: 2px solid #000;
-  background-color: #9fa9a3
-}
 li {
   color: red;
 }

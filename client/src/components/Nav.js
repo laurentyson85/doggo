@@ -16,7 +16,6 @@ function Nav ({ setUser }) {
       }
 
       let activeStyle = {
-        color:"white",
         borderBottom: "2px solid white",
       }
     
@@ -31,7 +30,7 @@ function Nav ({ setUser }) {
                 isActive ? activeStyle : undefined
                 }
             >
-                Welcome - All Walkers
+                View the Crew
             </NavLink>        
             <NavLink
                 to="reviews"
@@ -50,7 +49,7 @@ function Nav ({ setUser }) {
             >
                 Join as Dog Walker!
             </NavLink>
-            <button onClick={handleLogoutClick}>Logout</button>
+            <button className="logoutButton" onClick={handleLogoutClick}>Logout</button>
             </nav>
         </div>
         
