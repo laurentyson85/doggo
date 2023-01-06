@@ -98,3 +98,27 @@ button:hover {
   background-color: #097940;
   color: white;
 }
+
+.navBar {  
+  margin: 1.5rem;
+  margin-right: auto;    
+  margin-left: auto;    
+  max-width: 100%;    
+  min-width: 1000px;  
+}
+
+nav a {
+  display: inline-bock; 
+  margin: 4rem;
+  text-decoration: none;
+  font-size: 1.4em;
+  color: rgb(238, 226, 226);
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  
+}
+
+nav a:hover {  
+  border-bottom: 2px solid #000;
+  background-color: #9fa9a3
+}
