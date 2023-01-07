@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-function ReviewForm({ onLogin }) {
-    const navigate = useNavigate()
+function ReviewForm({ userID, walkerID }) {
+    // const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -12,6 +12,9 @@ function ReviewForm({ onLogin }) {
       //edit review form to be real
       //make post request
       //after post, think about how I will update this state to show newly created review
+
+      console.log(userID)
+      console.log(walkerID)
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -36,12 +39,12 @@ function ReviewForm({ onLogin }) {
             response.json().then((error) => setErrors(error.errors));
           }
         });
-        navigate("/walkers")
+        // navigate("/walkers")
       }
      
 
       return (
-        <div className="signupForm">
+        <div className="reviewForm">
         <div className="text">Sign Up for dogGo!</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">

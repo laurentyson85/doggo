@@ -40,7 +40,7 @@ function App() {
                     element={<Walkers />}/>
                     <Route 
                         path="walkers/:id" 
-                        element={<WalkerDetails />}
+                        element={<WalkerDetails user={user} />}
                     />            
             </Routes>         
 

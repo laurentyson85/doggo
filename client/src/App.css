@@ -34,6 +34,20 @@ body {
  
 }
 
+.reviewForm {
+  width: 330px;
+  font-size: larger;
+  margin: auto;
+  text-align: center; 
+  border-radius: 40px;
+  background-color: rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+  padding: 40px 60px;
+  margin-top: 100px;
+  box-shadow: -10px -10px 14px #aaa9a9a2,
+              10px 10px 14px rgba(147, 149, 151, 0.671);
+}
+
 .text{
   font-size: 25px;
   font-weight: 600;

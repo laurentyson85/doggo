@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :dog_walkers, only: [:index, :create, :show]
+  resources :reviews, only: [:index, :create, :destroy, :update]
+
+  #don't think I need index for reviews here, but double check later 
 
 
 end
