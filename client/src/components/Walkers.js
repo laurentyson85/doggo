@@ -7,13 +7,15 @@ function Walkers() {
         fetch("/dog_walkers")
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+            setAllWalkers(data)
         })
-      }, []) 
+      }, [])
+      
+      console.log(allWalkers)
 
 
     return (
-      <div className="walkerForm">        
+      <div className="allWalkers">        
         All Dog Walkers
       </div>
     );

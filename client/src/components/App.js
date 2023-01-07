@@ -6,6 +6,7 @@ import Nav from './Nav';
 import MyReviews from './MyReviews';
 import WalkerForm from './WalkerForm';
 import Walkers from './Walkers';
+import WalkerDetails from './WalkerDetails';
 import "../App.css"
 
 function App() {
@@ -37,12 +38,11 @@ function App() {
                 <Route 
                     path="walkers" 
                     element={<Walkers />}/>
-                    {/* <Route 
-                        path="jobs/:id" 
-                        element={<JobDetails allJobs={allJobs} allHipsters={allHipsters} updateAllHipsters={updateAllHipsters} updateAllJobs={updateAllJobs} />}
-                    />             */}
-            </Routes>
-            
+                    <Route 
+                        path="walkers/:id" 
+                        element={<WalkerDetails />}
+                    />            
+            </Routes>         
 
         </div>
         
