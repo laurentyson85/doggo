@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
     #still needs rescues and error handling
 
     def create
-        review = Review.create!(review_params)
+        review = @current_user.reviews.create!(review_params)
         render json: review, status: :created
     end
 
@@ -16,12 +16,12 @@ class ReviewsController < ApplicationController
         review = find_review
         review.destroy
         head :no_content
-      end
+    end
 
     private
 
     def review_params
-        params.permit(:walker_id, :user_id, :comment), :rating
+        params.permit(:walker_id, :comment, :rating)
     end
 
     def find_review
