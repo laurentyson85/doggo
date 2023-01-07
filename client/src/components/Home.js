@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 
-function Home({ onLogin }) { //these props are being passed down from App
+function Home({ onLogin }) {
     const [toggleForm, setToggleForm] = useState(true);
 
     return(

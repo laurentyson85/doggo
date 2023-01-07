@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom"
+import ReviewForm from './ReviewForm';
 
 function WalkerDetails({}) {
     const [walker, setWalker] = useState([])
+    const [showForm, setShowForm] = useState(false);
+
     const { id } = useParams()
 
     useEffect(() => {
@@ -25,17 +28,8 @@ function WalkerDetails({}) {
           <img src={walker.image_url} alt="image_url" />
           <p><span style={{fontWeight: "bold"}}>Name: </span> {walker.name}</p>
           <p>I love all dogs, but my personal favorite is a {walker.favorite_dog_breed}. Contact me at {walker.phone} to schedule a walk!</p>
-          {/* {expired ?
-            <>
-              <p>The position is expired.</p>
-              <button className="expired" onClick={handleDeleteClick}>No longer on the market? Remove it</button>
-            </>    
-          :
-            <>
-              <p>Active job posting</p>
-              <button className="open job" onClick={handleHireClick}>Hire a Hipster!</button>
-            </>                
-          } */}
+          <button className="addReviewButton" onClick={() => setShowForm(!showForm)}>Add a Review</button>
+          {showForm ? <ReviewForm /> : null}          
        </div>      
     )
   }
