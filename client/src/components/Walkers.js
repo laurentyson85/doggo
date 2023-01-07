@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WalkerCard from './WalkerCard';
 
 function Walkers() {
     const [allWalkers, setAllWalkers] = useState([])
@@ -14,11 +15,24 @@ function Walkers() {
       console.log(allWalkers)
 
 
+      const dogWalkers = allWalkers.map(walker => {
+        return(
+            <WalkerCard
+            key={walker.id}
+            id={walker.id}
+            name={walker.name}
+            pic={walker.image_url}
+            />
+        )
+    })
+  
     return (
-      <div className="allWalkers">        
-        All Dog Walkers
+      <div>
+        <ul className="cards">{dogWalkers}</ul>      
       </div>
-    );
+      
+      
+    )
   }
   
   export default Walkers;

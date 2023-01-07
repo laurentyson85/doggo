@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-function WalkerCard({name, id}) {
+function WalkerCard({name, id, pic}) {
 
   return (
     <li className="walkerCard">
