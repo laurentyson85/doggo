@@ -134,3 +134,9 @@ nav a {
 li {
   color: red;
 }
+
+.walkerDetails img {
+  justify-self: center;
+  height: 8.5rem;
+  width: auto;
+}
