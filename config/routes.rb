@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :dog_walker, only: [:index, :create, :show]
+  resources :dog_walkers, only: [:index, :create, :show]
 
 
 end

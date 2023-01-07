@@ -19,7 +19,7 @@ function App() {
       });
     }, []);
 
-    console.log(user)
+    console.log(user) //make sure to remove this later
   
     if (user) {
       return (
