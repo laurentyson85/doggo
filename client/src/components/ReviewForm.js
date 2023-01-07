@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-function ReviewForm({ userID, walkerID }) {
+function ReviewForm({ walkerID }) {
     // const navigate = useNavigate()
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [rating, setRating] = useState("");
+    const [comment, setComment] = useState("");    
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
 
@@ -13,7 +12,6 @@ function ReviewForm({ userID, walkerID }) {
       //make post request
       //after post, think about how I will update this state to show newly created review
 
-      console.log(userID)
       console.log(walkerID)
 
     function handleSubmit(event) {
@@ -21,20 +19,20 @@ function ReviewForm({ userID, walkerID }) {
         setErrors([]);
         setIsLoading(true)
 
-        fetch("/signup", {
+        fetch("/reviews", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username,
-            password,
-            password_confirmation: passwordConfirmation,
+            rating,
+            comment,
+            dog_walker_id: walkerID,
           }),
         }).then((response) => {
           setIsLoading(true);
           if (response.ok) {
-            response.json().then((user) => onLogin(user));
+            response.json().then((data) => console.log(data));
           } else {
             response.json().then((error) => setErrors(error.errors));
           }
@@ -45,17 +43,14 @@ function ReviewForm({ userID, walkerID }) {
 
       return (
         <div className="reviewForm">
-        <div className="text">Sign Up for dogGo!</div>  
+        <div className="text">Go ahead, add a review</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">
-              <input type="text" id="username" placeholder="username..." autoComplete="off" value={username} onChange={(event) => setUsername(event.target.value)}/>
+              <input type="text" id="rating" placeholder="rating..." autoComplete="off" value={rating} onChange={(event) => setRating(event.target.value)}/>
           </label>
           <label className="field">
-              <input type="password" id="password" placeholder="password..." autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input type="text" id="comment" placeholder="comment..." autoComplete="off" value={comment} onChange={(event) => setComment(event.target.value)} />
           </label>
-          <label className="field">
-              <input type="password" id="password_confirmation" placeholder="confirm password..." autoComplete="current-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
-          </label>        
           <button className="submitButton" type="submit">{isLoading ? "Loading..." : "Submit"}</button>          
         </form>
         <br></br>

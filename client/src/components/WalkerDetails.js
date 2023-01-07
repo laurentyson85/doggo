@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import ReviewForm from './ReviewForm';
 import ReviewCard from './ReviewCard';
 
-function WalkerDetails({ user }) {
+function WalkerDetails({}) {
     const [walker, setWalker] = useState([])
     const [walkerReviews, setWalkerReviews] = useState([])
     const [showForm, setShowForm] = useState(false);
@@ -39,7 +39,9 @@ function WalkerDetails({ user }) {
           <p>I love all dogs, but my personal favorite is the {walker.favorite_dog_breed}. Contact me at {walker.phone} to schedule a walk!</p>          
           <br></br>
           {walkerReviews.length > 0 ?
+          <>
             {displayReviews}
+          </>            
           :
             <>
               <p>No reviews yet! Add one</p>
@@ -48,7 +50,7 @@ function WalkerDetails({ user }) {
           <br></br>
           <button className="addReviewButton" onClick={() => setShowForm(!showForm)}>Add a Review</button>
           <br></br>
-          {showForm ? <ReviewForm userID={user.id} walkerID={walker.id} /> : null}                   
+          {showForm ? <ReviewForm walkerID={walker.id} /> : null}                   
        </div>      
     )
   }

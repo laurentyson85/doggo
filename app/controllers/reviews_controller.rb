@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:walker_id, :comment, :rating)
+        params.permit(:dog_walker_id, :comment, :rating)
     end
 
     def find_review
