@@ -29,9 +29,7 @@ function Walkers() {
     return (
       <div>
         <ul className="cards">{dogWalkers}</ul>      
-      </div>
-      
-      
+      </div>  
     )
   }
   

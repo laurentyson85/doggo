@@ -5,6 +5,11 @@ class DogWalkersController < ApplicationController
         render json: DogWalker.all
     end
 
+    def show
+        walker = DogWalker.find(params[:id])
+        render json: walker, serializer: DogWalkerWithReviewsSerializer
+      end
+
     #make show and create
 
 end
