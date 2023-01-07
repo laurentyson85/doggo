@@ -9,7 +9,9 @@ function ReviewForm({ onLogin }) {
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
 
-    
+      //edit review form to be real
+      //make post request
+      //after post, think about how I will update this state to show newly created review
 
     function handleSubmit(event) {
         event.preventDefault();
