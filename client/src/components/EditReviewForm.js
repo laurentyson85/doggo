@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
+function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview, handleEditClick }) {
     const [rating, setRating] = useState(reviewRating);
     const [comment, setComment] = useState(reviewComment);    
     const [errors, setErrors] = useState([]);
@@ -26,7 +26,7 @@ function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
           setRating("")
           setComment("")
           setIsLoading(false)
-          console.log(isLoading)          
+          handleEditClick()         
           if (response.ok) {
             response.json().then((data) => onUpdateReview(data));            
           } else {
