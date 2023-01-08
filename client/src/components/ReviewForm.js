@@ -39,7 +39,7 @@ function ReviewForm({ walkerID, addNewReview }) {
         <div className="text">Go ahead, add a review</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">
-              <input type="text" id="rating" placeholder="rating..." autoComplete="off" value={rating} onChange={(event) => setRating(event.target.value)}/>
+              <input type="text" id="rating" placeholder="add rating 1 - 5..." autoComplete="off" value={rating} onChange={(event) => setRating(event.target.value)}/>
           </label>
           <label className="field">
               <input type="text" id="comment" placeholder="comment..." autoComplete="off" value={comment} onChange={(event) => setComment(event.target.value)} />

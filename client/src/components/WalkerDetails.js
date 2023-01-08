@@ -36,7 +36,7 @@ function WalkerDetails({}) {
             comment={review.comment}
           />
         )
-    })     
+    })    
 
     return (
         <div className="walkerDetails">                   
