@@ -11,6 +11,5 @@ Rails.application.routes.draw do
 
   resources :dog_walkers, only: [:index, :create, :show]
   resources :reviews, only: [:index, :create, :destroy, :update]
-
-
+  
 end
