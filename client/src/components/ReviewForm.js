@@ -48,7 +48,7 @@ function ReviewForm({ walkerID, addNewReview }) {
         </form>
         <br></br>
         {errors.map((error) => (
-          <li key={error}>{error}</li>
+          <li key={error}>Error: {error}</li>
         ))}
       </div>
     );
