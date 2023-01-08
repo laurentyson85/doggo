@@ -1,9 +1,10 @@
 import React from "react";
 
-function MyReviewsCard({rating, comment, setEditForm, setDeleteForm}) {
+function MyReviewsCard({rating, comment, setEditForm, setDeleteForm, dogWalkerName}) {
 
   return (
-    <li className="myReviewsCard">      
+    <li className="myReviewsCard">
+      <p><span style={{fontWeight: "bold"}}>Your Review of Dog Walker:</span> {dogWalkerName}</p>      
       <span>{rating}</span>
       <span>{comment}</span>
       <br></br>
