@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
     #still needs rescues and error handling
 
+    def index
+        reviews = @current_user.reviews.all
+        render json: reviews
+    end
+    
     def create
         review = @current_user.reviews.create!(review_params)
         render json: review, status: :created
@@ -9,7 +14,7 @@ class ReviewsController < ApplicationController
     def update
         review = find_review
         review = Review.update!(review_params)
-        render json: review #this will need to be serialized to include the dog walker
+        render json: review
     end
 
     def destroy

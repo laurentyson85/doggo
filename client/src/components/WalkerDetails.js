@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import ReviewForm from './ReviewForm';
 import ReviewCard from './ReviewCard';
 
-function WalkerDetails({ getNewReview }) {
+function WalkerDetails() {
     const [walker, setWalker] = useState([])
     const [walkerReviews, setWalkerReviews] = useState([])
     const [showForm, setShowForm] = useState(false);
@@ -23,8 +23,7 @@ function WalkerDetails({ getNewReview }) {
       console.log(walkerReviews) //remove this console.log later
 
       function addNewReview(newReview){  
-        const updatedReviews = [...walkerReviews, newReview]
-        getNewReview(newReview)
+        const updatedReviews = [...walkerReviews, newReview]        
         setWalkerReviews(updatedReviews)
         setShowForm(false)
       }      

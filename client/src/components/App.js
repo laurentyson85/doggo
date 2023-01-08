@@ -10,7 +10,7 @@ import WalkerDetails from './WalkerDetails';
 import "../App.css"
 
 function App() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);    
   
     useEffect(() => {
       fetch("/me").then((response) => {
@@ -21,7 +21,8 @@ function App() {
     }, []);
 
     console.log(user) //make sure to remove this later
-  
+
+   
     if (user) {
       return (
         <div>
@@ -30,7 +31,7 @@ function App() {
             <Routes>        
                 <Route 
                     path="reviews" 
-                    element={<MyReviews user={user}/>}/>                    
+                    element={<MyReviews user={user} />}/>                    
                 <Route 
                     path="new" 
                     element={<WalkerForm/>}

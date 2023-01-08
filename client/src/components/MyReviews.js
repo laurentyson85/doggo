@@ -7,6 +7,10 @@ function MyReviews( {user} ) {
 
   console.log(user) //remember to remove this later
 
+  //it will be easier just to get my reviews and associated dog walker
+
+
+
   const myReviews = reviews.map(review => {
     return(
         <MyReviewsCard

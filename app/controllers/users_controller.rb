@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
   
     def show
-      render json: @current_user, include: ['reviews', 'reviews.dog_walker']
+      render json: @current_user
     end
   
     private
