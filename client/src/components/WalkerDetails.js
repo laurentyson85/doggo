@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import ReviewForm from './ReviewForm';
 import ReviewCard from './ReviewCard';
 
-function WalkerDetails({}) {
+function WalkerDetails({ getNewReview }) {
     const [walker, setWalker] = useState([])
     const [walkerReviews, setWalkerReviews] = useState([])
     const [showForm, setShowForm] = useState(false);
@@ -24,9 +24,10 @@ function WalkerDetails({}) {
 
       function addNewReview(newReview){  
         const updatedReviews = [...walkerReviews, newReview]
+        getNewReview(newReview)
         setWalkerReviews(updatedReviews)
         setShowForm(false)
-      }
+      }      
 
       const displayReviews = walkerReviews.map(review => {
         return(

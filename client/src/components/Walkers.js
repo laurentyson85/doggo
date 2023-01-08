@@ -12,7 +12,7 @@ function Walkers() {
         })
       }, [])
       
-      console.log(allWalkers)
+      console.log(allWalkers) //remember to remove this later 
 
 
       const dogWalkers = allWalkers.map(walker => {

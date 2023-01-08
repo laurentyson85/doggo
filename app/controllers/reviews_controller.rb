@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     def update
         review = find_review
         review = Review.update!(review_params)
-        render json: review
+        render json: review #this will need to be serialized to include the dog walker
     end
 
     def destroy

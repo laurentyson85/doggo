@@ -1,16 +1,16 @@
 import React from "react";
 
-function ReviewCard({rating, comment}) {
+function MyReviewsCard({rating, comment, setEditForm, setDeleteForm}) {
 
   return (
-    <li className="reviewCard">
-      {/* <p><span style={{fontWeight: "bold"}}>Title:</span> {title}</p> */}
+    <li className="myReviewsCard">      
       <span>{rating}</span>
       <span>{comment}</span>
       <br></br>
-    </li>
-    
+      <button className="editButton" onClick={setEditForm}>Edit Review</button>
+      <button className="deleteButton" onClick={setDeleteForm}>Delete Review</button>
+    </li>    
   )
 }
 
-export default ReviewCard;
+export default MyReviewsCard;
