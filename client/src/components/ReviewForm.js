@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"
 
 function ReviewForm({ walkerID, addNewReview }) {
-    // const navigate = useNavigate()
     const [rating, setRating] = useState("");
     const [comment, setComment] = useState("");    
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
-
-      //edit review form to be real
-      //make post request
-      //after post, think about how I will update this state to show newly created review
-
-      console.log(walkerID)
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -40,10 +32,7 @@ function ReviewForm({ walkerID, addNewReview }) {
             response.json().then((error) => setErrors(error.errors));
           }
         });
-        // navigate("/walkers")
       }
-     
-      //add navigation to direct someone to MyReviews
 
       return (
         <div className="reviewForm">
