@@ -10,32 +10,36 @@ function WalkerForm({ onLogin }) {
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
 
-    //need to make a route
 
     function handleSubmit(event) {
-        // event.preventDefault();
-        // setErrors([]);
-        // setIsLoading(true)
+        event.preventDefault();
+        setErrors([]);
+        setIsLoading(true)
 
-        // fetch("/signup", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify({
-        //     username,
-        //     password,
-        //     password_confirmation: passwordConfirmation,
-        //   }),
-        // }).then((response) => {
-        //   setIsLoading(false);
-        //   if (response.ok) {
-        //     response.json().then((user) => onLogin(user));
-        //     navigate("/walkers")
-        //   } else {
-        //     response.json().then((error) => setErrors(error.errors));
-        //   }
-        // });        
+        fetch("/dog_walkers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            favorite_dog_breed: dogBreed,
+            image_url: url,
+          }),
+        }).then((response) => {
+          setName("")
+          setPhone("")
+          setDogBreed("")
+          setUrl("")
+          setIsLoading(false);
+          if (response.ok) {
+            response.json().then((data) => console.log(data));//send this data up to app
+            // navigate("/walkers")
+          } else {
+            response.json().then((error) => setErrors(error.errors));
+          }
+        });        
       }
      
 

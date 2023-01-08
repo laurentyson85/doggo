@@ -5,7 +5,7 @@ class DogWalkersController < ApplicationController
         render json: DogWalker.all
     end
 
-    def create
+    def create #add some validations in model
         walker = DogWalker.create!(walker_params)
         render json: walker, status: :created
     end
