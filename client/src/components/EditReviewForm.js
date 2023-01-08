@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-function EditReviewForm({ editID, addNewReview }) {
+function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
     const [rating, setRating] = useState("");
     const [comment, setComment] = useState("");    
     const [errors, setErrors] = useState([]);
@@ -13,7 +13,7 @@ function EditReviewForm({ editID, addNewReview }) {
         setErrors([]);
         setIsLoading(true)
 
-        fetch(`reviews/${editID}`, {
+        fetch(`reviews/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function EditReviewForm({ editID, addNewReview }) {
           setIsLoading(false)
           console.log(isLoading)          
           if (response.ok) {
-            response.json().then((data) => addNewReview(data));            
+            response.json().then((data) => onUpdateReview(data));            
           } else {
             response.json().then((error) => setErrors(error.errors));
           }

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MyReviewsCard from "./MyReviewsCard";
-import EditReviewForm from "./EditReviewForm";
 
 function MyReviews( {} ) {
-  const [reviews, setMyReviews] = useState([])
-  const [showEditForm, setShowEditForm] = useState(false);
-  const [editID, setEditID] = useState(false);
+  const [reviews, setMyReviews] = useState([])  
 
   console.log(reviews) //remember to remove this later
 
@@ -15,28 +12,30 @@ function MyReviews( {} ) {
     .then(data => {
       setMyReviews(data)
     })
-  }, [])
+  }, [])  
 
-  function handleEditClick(event){
-    setEditID(event.target.id)
-    setShowEditForm(true)
-  }
-
-  function updateReviews(id){
+  function handleDeleteReview(id){
     const updatedReviews = reviews.filter((review) => review.id !== id)
     setMyReviews(updatedReviews)
-  } 
+  }
+
+  function handleUpdateReview(updatedReview) {
+    const updatedReviews = reviews.map((review) => {
+      return review.id === updatedReview.id ? updatedReview : review;
+    });
+    setMyReviews(updatedReviews);
+  }
 
   const myReviews = reviews.map(review => {
     return(
         <MyReviewsCard
         key={review.id}
         id={review.id}
-        rating={review.rating}
-        comment={review.comment}
+        reviewRating={review.rating}
+        reviewComment={review.comment}
         dogWalkerName={review.dog_walker.name}
-        handleEditClick={handleEditClick}
-        onDeleteReview={updateReviews}
+        onDeleteReview={handleDeleteReview}
+        onUpdateReview={handleUpdateReview}
         />
     )
 })

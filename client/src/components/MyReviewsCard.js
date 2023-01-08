@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import EditReviewForm from "./EditReviewForm";
 
-function MyReviewsCard({id, rating, comment, handleEditClick, handleDeleteClick, dogWalkerName, onDeleteReview}) {
+
+function MyReviewsCard({id, reviewRating, reviewComment, dogWalkerName, onDeleteReview, onUpdateReview}) {
+
+  const [showEditForm, setShowEditForm] = useState(false);
+
+  function handleEditClick(){
+    setShowEditForm(true)
+  }
 
   function handleDeleteClick(){
     fetch(`reviews/${id}`,{
@@ -11,17 +19,18 @@ function MyReviewsCard({id, rating, comment, handleEditClick, handleDeleteClick,
       }
     });
   }
-
  
 
   return (
     <li className="myReviewsCard">
       <p><span style={{fontWeight: "bold"}}>Your Review of Dog Walker:</span> {dogWalkerName}</p>      
-      <span>{rating}</span>
-      <span>{comment}</span>
+      <span>{reviewRating}</span>
+      <span>{reviewComment}</span>
       <br></br>
       <button className="editButton" onClick={handleEditClick}>Edit Review</button>
       <button className="deleteButton" onClick={handleDeleteClick}>Delete Review</button>
+      <br></br>
+          {showEditForm ? <EditReviewForm id={id} reviewRating={reviewRating} reviewComment={reviewComment} onUpdateReview={onUpdateReview} /> : null}                   
     </li>    
   )
 }
