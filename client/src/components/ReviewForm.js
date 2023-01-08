@@ -21,13 +21,13 @@ function ReviewForm({ walkerID, addNewReview }) {
             comment,
             dog_walker_id: walkerID,
           }),
-        }).then((response) => {
-          setIsLoading(true);
+        }).then((response) => {          
           setRating("")
           setComment("")
+          setIsLoading(false)
+          console.log(isLoading)          
           if (response.ok) {
-            response.json().then((data) => addNewReview(data));
-            setIsLoading(false)
+            response.json().then((data) => addNewReview(data));            
           } else {
             response.json().then((error) => setErrors(error.errors));
           }

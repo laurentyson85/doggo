@@ -27,14 +27,14 @@ function SignUpForm({ onLogin }) {
             password_confirmation: passwordConfirmation,
           }),
         }).then((response) => {
-          setIsLoading(true);
+          setIsLoading(false);
           if (response.ok) {
             response.json().then((user) => onLogin(user));
+            navigate("/walkers")
           } else {
             response.json().then((error) => setErrors(error.errors));
           }
-        });
-        navigate("/walkers")
+        });        
       }
      
 
