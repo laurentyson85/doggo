@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import WalkerCard from './WalkerCard';
 
 function Walkers() {
-    const [allWalkers, setAllWalkers] = useState([])//move this up to app because I need it for my walker form
+    const [allWalkers, setAllWalkers] = useState([])
 
     useEffect(() => {
         fetch("/dog_walkers")
@@ -11,8 +11,6 @@ function Walkers() {
             setAllWalkers(data)
         })
       }, [])
-      
-      console.log(allWalkers) //remember to remove this later 
 
 
       const dogWalkers = allWalkers.map(walker => {

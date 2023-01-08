@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-function WalkerForm({ onLogin }) {
+function WalkerForm({ }) {
     const navigate = useNavigate()
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -34,10 +34,9 @@ function WalkerForm({ onLogin }) {
           setUrl("")
           setIsLoading(false);
           if (response.ok) {
-            response.json().then((data) => console.log(data));//send this data up to app
-            // navigate("/walkers")
+            response.json().then(navigate("/walkers"));
           } else {
-            response.json().then((error) => setErrors(error.errors));
+            response.json().then((error) => setErrors(error.errors)); //set up error handling on the back
           }
         });        
       }
