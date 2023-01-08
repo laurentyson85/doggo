@@ -7,7 +7,7 @@ function MyReviewsCard({id, reviewRating, reviewComment, dogWalkerName, onDelete
   const [showEditForm, setShowEditForm] = useState(false);
 
   function handleEditClick(){
-    setShowEditForm(true)
+    setShowEditForm(!showEditForm)
   }
 
   function handleDeleteClick(){

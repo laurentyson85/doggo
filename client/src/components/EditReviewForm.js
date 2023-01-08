@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 
 function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
-    const [rating, setRating] = useState("");
-    const [comment, setComment] = useState("");    
+    const [rating, setRating] = useState(reviewRating);
+    const [comment, setComment] = useState(reviewComment);    
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
 
@@ -19,8 +19,8 @@ function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            rating,
-            comment,
+            rating: rating,
+            comment: comment,
           }),
         }).then((response) => {          
           setRating("")
@@ -40,10 +40,10 @@ function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview }) {
         <div className="text">Update your review</div>  
         <form onSubmit={handleSubmit}>
           <label className="field">
-              <input type="text" id="rating" placeholder="update your rating 1 - 5..." autoComplete="off" value={rating} onChange={(event) => setRating(event.target.value)}/>
+              <input type="text" id="rating" autoComplete="off" value={rating} onChange={(event) => setRating(event.target.value)}/>
           </label>
           <label className="field">
-              <input type="text" id="comment" placeholder="update your comment..." autoComplete="off" value={comment} onChange={(event) => setComment(event.target.value)} />
+              <input type="text" id="comment"  autoComplete="off" value={comment} onChange={(event) => setComment(event.target.value)} />
           </label>
           <button className="submitButton" type="submit">{isLoading ? "Loading..." : "Submit"}</button>          
         </form>

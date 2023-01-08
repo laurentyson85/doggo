@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     #still needs rescues and error handling
-    
+
     def index
         reviews = @current_user.reviews.all
         render json: reviews
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
     def update
         review = find_review
-        review = Review.update!(review_params)
+        review.update!(review_params)
         render json: review
     end
 
@@ -25,8 +25,8 @@ class ReviewsController < ApplicationController
 
     private
 
-    def review_params
-        params.permit(:dog_walker_id, :comment, :rating)
+    def review_params        
+        params.require(:review).permit(:rating, :dog_walker_id, :comment)
     end
 
     def find_review
