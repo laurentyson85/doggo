@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     #still needs rescues and error handling
-
+    
     def index
         reviews = @current_user.reviews.all
         render json: reviews

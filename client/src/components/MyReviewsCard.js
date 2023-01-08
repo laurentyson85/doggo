@@ -1,6 +1,18 @@
 import React from "react";
 
-function MyReviewsCard({rating, comment, setEditForm, setDeleteForm, dogWalkerName}) {
+function MyReviewsCard({id, rating, comment, handleEditClick, handleDeleteClick, dogWalkerName, onDeleteReview}) {
+
+  function handleDeleteClick(){
+    fetch(`reviews/${id}`,{
+      method: "DELETE",
+    }).then((response) => {
+      if (response.ok) {        
+        onDeleteReview(id)
+      }
+    });
+  }
+
+ 
 
   return (
     <li className="myReviewsCard">
@@ -8,8 +20,8 @@ function MyReviewsCard({rating, comment, setEditForm, setDeleteForm, dogWalkerNa
       <span>{rating}</span>
       <span>{comment}</span>
       <br></br>
-      <button className="editButton" onClick={setEditForm}>Edit Review</button>
-      <button className="deleteButton" onClick={setDeleteForm}>Delete Review</button>
+      <button className="editButton" onClick={handleEditClick}>Edit Review</button>
+      <button className="deleteButton" onClick={handleDeleteClick}>Delete Review</button>
     </li>    
   )
 }
