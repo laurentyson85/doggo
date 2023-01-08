@@ -22,6 +22,12 @@ function WalkerDetails({}) {
       console.log(walker) //remove this console.log later
       console.log(walkerReviews) //remove this console.log later
 
+      function addNewReview(newReview){  
+        const updatedReviews = [...walkerReviews, newReview]
+        setWalkerReviews(updatedReviews)
+        setShowForm(false)
+      }
+
       const displayReviews = walkerReviews.map(review => {
         return(
           <ReviewCard
@@ -50,7 +56,7 @@ function WalkerDetails({}) {
           <br></br>
           <button className="addReviewButton" onClick={() => setShowForm(!showForm)}>Add a Review</button>
           <br></br>
-          {showForm ? <ReviewForm walkerID={walker.id} /> : null}                   
+          {showForm ? <ReviewForm walkerID={walker.id} addNewReview={addNewReview} /> : null}                   
        </div>      
     )
   }

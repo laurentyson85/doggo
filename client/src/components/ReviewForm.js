@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-function ReviewForm({ walkerID }) {
+function ReviewForm({ walkerID, addNewReview }) {
     // const navigate = useNavigate()
     const [rating, setRating] = useState("");
     const [comment, setComment] = useState("");    
@@ -31,8 +31,11 @@ function ReviewForm({ walkerID }) {
           }),
         }).then((response) => {
           setIsLoading(true);
+          setRating("")
+          setComment("")
           if (response.ok) {
-            response.json().then((data) => console.log(data));
+            response.json().then((data) => addNewReview(data));
+            setIsLoading(false)
           } else {
             response.json().then((error) => setErrors(error.errors));
           }
@@ -40,6 +43,7 @@ function ReviewForm({ walkerID }) {
         // navigate("/walkers")
       }
      
+      //add navigation to direct someone to MyReviews
 
       return (
         <div className="reviewForm">
