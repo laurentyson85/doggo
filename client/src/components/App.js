@@ -31,7 +31,7 @@ function App() {
             <Routes>        
                 <Route 
                     path="reviews" 
-                    element={<MyReviews user={user} />}/>                    
+                    element={<MyReviews />}/>                    
                 <Route 
                     path="new" 
                     element={<WalkerForm/>}
