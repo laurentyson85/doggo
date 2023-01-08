@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import WalkerCard from './WalkerCard';
 
 function Walkers() {
-    const [allWalkers, setAllWalkers] = useState([])
+    const [allWalkers, setAllWalkers] = useState([])//move this up to app because I need it for my walker form
 
     useEffect(() => {
         fetch("/dog_walkers")

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 function EditReviewForm({ id, reviewRating, reviewComment, onUpdateReview, handleEditClick }) {
     const [rating, setRating] = useState(reviewRating);
     const [comment, setComment] = useState(reviewComment);    
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState([]); //need to double check my review controller because I don't think I'm sending errors to the front
     const [isLoading, setIsLoading] = useState(false)
 
     function handleSubmit(event) {
