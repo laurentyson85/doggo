@@ -2,5 +2,9 @@ class DogWalker < ApplicationRecord
     has_many :reviews
     has_many :users, through: :reviews
 
-    #when you make the form to create a dog walker on the front, come back here and add whatever validations
+    validates :name, presence: true
+    validates :phone, presence: true
+    validates :favorite_dog_breed, presence: true
+    validates :image_url, presence: true
+
 end

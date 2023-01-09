@@ -1,5 +1,4 @@
-class ReviewsController < ApplicationController
-    #still needs rescues and error handling
+class ReviewsController < ApplicationController    
 
     def index
         reviews = @current_user.reviews.all
@@ -31,6 +30,6 @@ class ReviewsController < ApplicationController
 
     def find_review
         Review.find(params[:id])
-    end
+    end  
     
 end
