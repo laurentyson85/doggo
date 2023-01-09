@@ -10,7 +10,7 @@ class DogWalkersController < ApplicationController
         render json: walker, status: :created
     end
 
-    def show #add error handling
+    def show
         walker = DogWalker.find(params[:id])
         render json: walker, serializer: DogWalkerWithReviewsSerializer
     end
@@ -19,6 +19,6 @@ class DogWalkersController < ApplicationController
   
     def walker_params
         params.permit(:name, :phone, :favorite_dog_breed, :image_url)
-    end
+    end    
 
 end
