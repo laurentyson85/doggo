@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function WalkerCard({name, id, pic}) {
 
   return (
-    <li className="walkerCard">
+    <li className="myCard">
       {/* <p><span style={{fontWeight: "bold"}}>Title:</span> {title}</p> */}
       <p><span style={{fontSize: "x-large"}}>{name}</span></p>
       <p>🐶</p>

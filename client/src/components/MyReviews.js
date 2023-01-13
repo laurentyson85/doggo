@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import MyReviewsCard from "./MyReviewsCard";
 
 function MyReviews( {} ) {
-  const [reviews, setMyReviews] = useState([])  
-
-  console.log(reviews) //remember to remove this later
+  const [reviews, setMyReviews] = useState([]) 
 
   useEffect(() => {
     fetch('/reviews')
@@ -39,10 +37,8 @@ function MyReviews( {} ) {
         />
     )
 })
-
-  //the return below needs to be a card + two forms that show when a button is clicked
     return (
-      <div className="walkerForm">
+      <div className="myReviewListings">
         {reviews.length > 0 ?
           <>
             {myReviews}

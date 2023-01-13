@@ -22,16 +22,19 @@ function MyReviewsCard({id, reviewRating, reviewComment, dogWalkerName, onDelete
  
 
   return (
-    <li className="myReviewsCard">
+    <>
+    <div className="myReviewsCard">
       <p><span style={{fontWeight: "bold"}}>Your Review of Dog Walker:</span> {dogWalkerName}</p>      
-      <span>{reviewRating}</span>
-      <span>{reviewComment}</span>
+      <span>Rating: {reviewRating} - </span>
+      <span>"{reviewComment}"</span>
       <br></br>
-      <button className="editButton" onClick={handleEditClick}>{showEditForm ? "Hide Edit Form" : "Edit Review"}</button>
-      <button className="deleteButton" onClick={handleDeleteClick}>Delete Review</button>
-      <br></br>
-          {showEditForm ? <EditReviewForm id={id} reviewRating={reviewRating} reviewComment={reviewComment} onUpdateReview={onUpdateReview} handleEditClick={handleEditClick} /> : null}                   
-    </li>    
+      <p>✅</p>
+      <button className="myButton" onClick={handleEditClick}>{showEditForm ? "Hide Edit Form" : "Edit Review"}</button>
+      <button className="myButton" onClick={handleDeleteClick}>Delete Review</button>
+      </div>
+    {showEditForm ? <EditReviewForm id={id} reviewRating={reviewRating} reviewComment={reviewComment} onUpdateReview={onUpdateReview} handleEditClick={handleEditClick} /> : null}
+    <br></br>
+    </>                       
   )
 }
 
