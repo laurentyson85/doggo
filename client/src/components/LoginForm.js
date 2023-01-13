@@ -45,7 +45,7 @@ function LoginForm({ onLogin }) {
         </form>
         <br></br>
         {errors.map((error) => (
-          <li key={error}>Error: {error}</li>
+          <li className="error" key={error}>Error: {error}</li>
         ))}
       </div>
     );

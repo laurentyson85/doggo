@@ -62,7 +62,7 @@ function WalkerForm({ }) {
         </form>
         <br></br>
         {errors.map((error) => (
-          <li key={error}>{error}</li>
+          <li className="error" key={error}>{error}</li>
         ))}
       </div>
     );
