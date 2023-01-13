@@ -165,15 +165,16 @@ nav a {
 
 .walkerDetails img {
   justify-self: center;
-  height: 8.5rem;
+  height: 20rem;
   width: auto;
+  border-radius: 20px;
 }
 
 .listings {
   list-style: none;
 }
 
-.myCard{
+.myCard {
   text-align: center;
   border-radius: 25px;
   margin: 1rem;
@@ -182,6 +183,17 @@ nav a {
   padding: 2rem;
   margin: 1rem;
 }
+
+.walkerDetails {
+  text-align: center;
+  border-radius: 25px;
+  margin: 1rem;
+  background-color: rgba(255,255,255,0.13);
+  backdrop-filter: blur(30px);
+  padding: 2rem;
+  margin: 1rem;
+}
+
 
 .detailsLink{
   color: #3999dd;  

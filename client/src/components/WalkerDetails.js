@@ -18,9 +18,6 @@ function WalkerDetails() {
             setWalkerReviews(data.reviews)
         })
       }, [])
-      
-      console.log(walker) //remove this console.log later
-      console.log(walkerReviews) //remove this console.log later
 
       function addNewReview(newReview){  
         const updatedReviews = [...walkerReviews, newReview]        
@@ -39,10 +36,11 @@ function WalkerDetails() {
     })    
 
     return (
+      <>
         <div className="walkerDetails">                   
           <img src={walker.image_url} alt="image_url" />
-          <p><span style={{fontWeight: "bold"}}>Name: </span> {walker.name}</p>
-          <p>I love all dogs, but my personal favorite is the {walker.favorite_dog_breed}. Contact me at {walker.phone} to schedule a walk!</p>          
+          <p><span style={{fontSize: "x-large"}}>Name: {walker.name}</span></p> 
+          <p>"I love all dogs, but my personal favorite is the {walker.favorite_dog_breed}. Contact me at {walker.phone} to schedule a walk!"</p>          
           <br></br>
           {walkerReviews.length > 0 ?
           <>
@@ -55,9 +53,9 @@ function WalkerDetails() {
           }
           <br></br>
           <button className="addReviewButton" onClick={() => setShowForm(!showForm)}>Add a Review</button>
-          <br></br>
-          {showForm ? <ReviewForm walkerID={walker.id} addNewReview={addNewReview} /> : null}                   
-       </div>      
+       </div>
+       {showForm ? <ReviewForm walkerID={walker.id} addNewReview={addNewReview} /> : null}
+      </>           
     )
   }
   
