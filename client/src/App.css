@@ -187,6 +187,11 @@ nav a {
   color: #3999dd;  
 }
 
+.detailsLink:hover {
+  background-color: #097940;
+  color: white;
+}
+
 @media (min-width: 768px) {
   .listings {
     display: flex;
