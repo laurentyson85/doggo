@@ -39,15 +39,7 @@ function MyReviews( {} ) {
 })
     return (
       <div className="myReviewListings">
-        {reviews.length > 0 ?
-          <>
-            {myReviews}
-          </>            
-          :
-            <>
-              <p>No reviews yet! Head to View the Crew to select a dog walker and add a review</p>
-            </>                
-          }    
+        {myReviews}
       </div>
     );
   }
