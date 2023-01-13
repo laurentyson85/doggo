@@ -177,13 +177,14 @@ nav a {
   text-align: center;
   border-radius: 25px;
   margin: 1rem;
-  background-color: #deeaee;
+  background-color: rgba(255,255,255,0.13);
+  backdrop-filter: blur(30px);
   padding: 2rem;
   margin: 1rem;
 }
 
 .detailsLink{
-  color: #034f84;  
+  color: #3999dd;  
 }
 
 @media (min-width: 768px) {

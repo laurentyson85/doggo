@@ -6,9 +6,9 @@ function WalkerCard({name, id, pic}) {
   return (
     <li className="walkerCard">
       {/* <p><span style={{fontWeight: "bold"}}>Title:</span> {title}</p> */}
-      <span>{name}</span>
-      <br></br>
-      <Link className="detailsLink" to={`/walkers/${id}`}>Reviews</Link>
+      <p><span style={{fontSize: "x-large"}}>{name}</span></p>
+      <p>🐶</p>
+      <Link className="detailsLink" to={`/walkers/${id}`}>Read more and review!</Link>
     </li>
     
   )
