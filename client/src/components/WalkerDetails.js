@@ -51,7 +51,6 @@ function WalkerDetails() {
               <p>No reviews yet! Add one</p>
             </>                
           }
-          <br></br>
           <button className="addReviewButton" onClick={() => setShowForm(!showForm)}>Add a Review</button>
        </div>
        {showForm ? <ReviewForm walkerID={walker.id} addNewReview={addNewReview} /> : null}

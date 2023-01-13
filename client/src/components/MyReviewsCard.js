@@ -31,6 +31,7 @@ function MyReviewsCard({id, reviewRating, reviewComment, dogWalkerName, onDelete
       <button className="myButton" onClick={handleEditClick}>{showEditForm ? "Hide Edit Form" : "Edit Review"}</button>
       <button className="myButton" onClick={handleDeleteClick}>Delete Review</button>
       </div>
+      <br></br>
     {showEditForm ? <EditReviewForm id={id} reviewRating={reviewRating} reviewComment={reviewComment} onUpdateReview={onUpdateReview} handleEditClick={handleEditClick} /> : null}
     <br></br>
     </>                       
