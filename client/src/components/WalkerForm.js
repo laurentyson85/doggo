@@ -36,7 +36,7 @@ function WalkerForm({ }) {
           if (response.ok) {
             response.json().then(navigate("/walkers"));
           } else {
-            response.json().then((error) => setErrors(error.errors)); //set up error handling on the back
+            response.json().then((error) => setErrors(error.errors)); 
           }
         });        
       }

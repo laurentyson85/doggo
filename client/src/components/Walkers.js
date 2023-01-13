@@ -26,7 +26,7 @@ function Walkers() {
   
     return (
       <div>
-        <ul className="cards">{dogWalkers}</ul>      
+        <ul className="listings">{dogWalkers}</ul>      
       </div>  
     )
   }
