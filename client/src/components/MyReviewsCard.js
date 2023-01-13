@@ -18,8 +18,7 @@ function MyReviewsCard({id, reviewRating, reviewComment, dogWalkerName, onDelete
         onDeleteReview(id)
       }
     });
-  }
- 
+  } 
 
   return (
     <>

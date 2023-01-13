@@ -3,6 +3,7 @@ import MyReviewsCard from "./MyReviewsCard";
 
 function MyReviews( {} ) {
   const [reviews, setMyReviews] = useState([]) 
+  console.log(reviews)
 
   useEffect(() => {
     fetch('/reviews')
