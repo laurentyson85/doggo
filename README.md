@@ -4,7 +4,7 @@
 ## Description
 Welcome to doGo!. The fun app that lets you review a dog walker.
 
-[Check out this two-minute video walkthrough of my app](https://youtu.be/0AaJrl59t5I) and [my blog post](https://dev.to/laurentyson85/using-the-faker-gem-to-populate-your-database-5afe) about the project; in the blog, I delve into some cool features!
+[Check out this two-minute video walkthrough of my app](https://youtu.be/0AaJrl59t5I) and [my blog post](https://dev.to/laurentyson85/authenticating-users-in-rails-hm1) about the project; in the blog, I delve into some cool features!
 
 
 ## Installation
