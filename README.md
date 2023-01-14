@@ -1,5 +1,5 @@
 # doGo!
-![image](Screen Shot 2023-01-13 at 5.40.55 PM.png)
+![doggo gif](https://makeagif.com/gif/doggo-rails-app-8ACMhW)
 
 ## Description
 Welcome to doGo!. The fun app that lets you review a dog walker.
