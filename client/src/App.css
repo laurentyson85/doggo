@@ -149,6 +149,10 @@ button:hover {
   min-width: 1000px;  
 }
 
+.reviewHeading {
+  margin-left: 4rem;
+}
+
 nav a {
   display: inline-bock; 
   margin: 4rem;

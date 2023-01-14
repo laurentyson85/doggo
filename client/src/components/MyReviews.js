@@ -3,7 +3,6 @@ import MyReviewsCard from "./MyReviewsCard";
 
 function MyReviews( {} ) {
   const [reviews, setMyReviews] = useState([]) 
-  console.log(reviews)
 
   useEffect(() => {
     fetch('/reviews')
@@ -40,6 +39,8 @@ function MyReviews( {} ) {
 })
     return (
       <div className="myReviewListings">
+        <h2 className="reviewHeading">To add a review, head over to View the Crew!</h2>
+        <br></br>
         {myReviews}
       </div>
     );
