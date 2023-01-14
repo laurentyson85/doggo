@@ -1,5 +1,5 @@
 # doGo!
-![doggo gif](https://makeagif.com/gif/doggo-rails-app-8ACMhW)
+![DogGo! rails app](https://i.makeagif.com/media/1-14-2023/8ACMhW.gif)
 
 ## Description
 Welcome to doGo!. The fun app that lets you review a dog walker.
