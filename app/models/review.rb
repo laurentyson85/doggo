@@ -5,6 +5,6 @@ class Review < ApplicationRecord
   validates :comment, presence: true
   validates :rating, presence: true
 
-  #when you make the form to create a review on the front, come back here and add whatever validations
-  #add validation for rating between 1-5
-end
+  validates :rating, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5}
+
+  end
