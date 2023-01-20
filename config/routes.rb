@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/mywalkers", to: "dog_walkers#get_walkers"
+  # get "/mywalkers", to: "dog_walkers#get_walkers"
 
   resources :dog_walkers, only: [:index, :create, :show]
   resources :reviews, only: [:index, :create, :destroy, :update]

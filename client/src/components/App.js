@@ -10,12 +10,12 @@ import WalkerDetails from './WalkerDetails';
 import "../App.css"
 
 function App() {
-    const [user, setUser] = useState(null);    
+    const [user, setUser] = useState(null);
   
     useEffect(() => {
       fetch("/me").then((response) => {
         if (response.ok) {
-          response.json().then((user) => setUser(user));
+          response.json().then(() => setUser(user));
         }
       });
     }, []);
@@ -29,10 +29,7 @@ function App() {
             <Routes>        
                 <Route 
                     path="reviews" 
-                    element={<MyReviews />}/>
-                <Route 
-                    path="myWalkers" 
-                    element={<MyReviews />}/>                    
+                    element={<MyReviews />}/>                
                 <Route 
                     path="new" 
                     element={<WalkerForm/>}

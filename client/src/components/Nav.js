@@ -41,7 +41,7 @@ function Nav ({ setUser }) {
             >
                 My Reviews
             </NavLink>
-            <NavLink
+            {/* <NavLink
                 to="myWalkers"
                 end
                 style={({ isActive }) =>
@@ -49,7 +49,7 @@ function Nav ({ setUser }) {
                 }
             >
                 My Dog Walkers
-            </NavLink>        
+            </NavLink>         */}
             <NavLink
                 to="new"
                 style={({ isActive }) =>
