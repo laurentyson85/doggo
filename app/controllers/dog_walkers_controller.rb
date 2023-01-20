@@ -5,7 +5,7 @@ class DogWalkersController < ApplicationController
     end
 
     # def get_walkers
-    #     walkers = @current_user.walkers.all
+    #     walkers = @current_user.dog_walkers.all
     #     render json: walkers
     # end
 
