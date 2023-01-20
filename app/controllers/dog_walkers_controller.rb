@@ -4,6 +4,11 @@ class DogWalkersController < ApplicationController
         render json: DogWalker.all
     end
 
+    def get_walkers
+        walkers = @current_user.walkers.all
+        render json: walkers
+    end
+
     def create
         walker = DogWalker.create!(walker_params)
         render json: walker, status: :created
