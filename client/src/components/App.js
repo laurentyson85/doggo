@@ -9,6 +9,10 @@ import Walkers from './Walkers';
 import WalkerDetails from './WalkerDetails';
 import "../App.css"
 
+//if I end up rescheduling this, do a different route to get users dog walkers. then everytime you go to that page the fetch will rerun
+
+//add a new client side route for the users dog walkers. Structure similar to my reviews
+
 function App() {
     const [user, setUser] = useState(null);
   
