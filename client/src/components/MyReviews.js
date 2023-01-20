@@ -10,7 +10,9 @@ function MyReviews( {} ) {
     .then(data => {
       setMyReviews(data)
     })
-  }, [])  
+  }, []) 
+  
+  console.log(reviews)
 
   function handleDeleteReview(id){
     const updatedReviews = reviews.filter((review) => review.id !== id)
