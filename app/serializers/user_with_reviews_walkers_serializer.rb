@@ -1,4 +1,4 @@
-class UserSerializerWithReviewsWalkers < ActiveModel::Serializer
+class UserWithReviewsWalkersSerializer < ActiveModel::Serializer
   attributes :id, :username 
 
   has_many :dog_walkers

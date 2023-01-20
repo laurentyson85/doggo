@@ -26,24 +26,25 @@ function MyReviews( {} ) {
     setMyReviews(updatedReviews);
   }
 
-  const myReviews = reviews.map(review => {
-    return(
-        <MyReviewsCard
-        key={review.id}
-        id={review.id}
-        reviewRating={review.rating}
-        reviewComment={review.comment}
-        dogWalkerName={review.dog_walker.name}
-        onDeleteReview={handleDeleteReview}
-        onUpdateReview={handleUpdateReview}
-        />
-    )
-})
+//   const myReviews = reviews.map(review => {
+//     return(
+//         <MyReviewsCard
+//         key={review.id}
+//         id={review.id}
+//         reviewRating={review.rating}
+//         reviewComment={review.comment}
+//         dogWalkerName={review.dog_walker.name}
+//         onDeleteReview={handleDeleteReview}
+//         onUpdateReview={handleUpdateReview}
+//         />
+//     )
+// })
     return (
       <div className="myReviewListings">
         <h2 className="reviewHeading">To add a review, head over to View the Crew!</h2>
         <br></br>
-        {myReviews}
+        {/* {myReviews} */}
+        HI
       </div>
     );
   }

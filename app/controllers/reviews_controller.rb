@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
     def index
         reviews = @current_user.reviews.all
-        render json: reviews, serializer: UserSerializerWithReviewsWalkers
+        render json: reviews, serializer: UserWithReviewsWalkersSerializer
     end
     
     def create
