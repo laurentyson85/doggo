@@ -29,6 +29,9 @@ function App() {
             <Routes>        
                 <Route 
                     path="reviews" 
+                    element={<MyReviews />}/>
+                <Route 
+                    path="myWalkers" 
                     element={<MyReviews />}/>                    
                 <Route 
                     path="new" 
